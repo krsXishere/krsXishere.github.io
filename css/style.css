@@ -2,21 +2,35 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
 }
+
+p {
+  margin-left: 20px;
+}
+
 /*navbar*/
 nav {
   display: flex;
-  background-color: coral;
+  background-color: blue;
   justify-content: space-around;
   /* padding: 20px 0; atas bawah 20  kiri kanan 0 */
   /* atur padding dengan flex */
   height: 45px;
   align-items: center;
   color: whitesmoke;
+  animation-name: euy;
+  animation-duration: 4s;
 }
+
+@keyframes euy {
+  from {background-color: lightblue;}
+  to {background-color: blue;}
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -24,9 +38,11 @@ nav ul {
   justify-content: space-between;
   transition: all 0.4s;
 }
+
 nav .logo {
-  font-family: "Srisakdi", cursive;
-  letter-spacing: 3px; /*space antar char*/
+  font-family: "Helvetica", cursive;
+  letter-spacing: 3px;
+  /*space antar char*/
 }
 
 nav ul li a {
@@ -38,145 +54,212 @@ nav ul li a {
 nav ul li a:hover {
   color: teal;
 }
-  /* hamburger menu */
-  .menu-toggle{
-    display: none; 
-    flex-direction: column;
-    height: 17px;
-    justify-content: space-between;
-    position: relative;
- }
- .menu-toggle input{
-     position: absolute;
-     top:-5px;
-     left:-3px;
-     width:21px;
-     height: 21px;
-     opacity: 0;
-     cursor: pointer;
-     z-index: 2;
- }
- .menu-toggle span{
-     display: block;
-     width: 21px;
-     height: 2px;
-     background-color: whitesmoke;
-     border-radius: 3px;
-     transition: all 0.7s;
- }
 
-   /*x on hamburger menu*/
-   .menu-toggle span:nth-child(2){
-    transform-origin: left center;
-  }
-  
-  .menu-toggle span:nth-child(4){
-    transform-origin: left center;
-  }
-  
-  .menu-toggle input:checked ~ span:nth-child(2){
-    transform: rotate(45deg) ;
-  }
-  
-  .menu-toggle input:checked ~ span:nth-child(4){
-    transform: rotate(-45deg) ;
-  }
-  /* invis span ke 2 / child ke 3 */
-  .menu-toggle input:checked ~ span:nth-child(3){
-    width: 0%;
-    opacity: 0;
-    transition: .1s
-  }
+/* hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 17px;
+  justify-content: space-between;
+  position: relative;
+}
 
-  .image {
-   
-    width: 100%;
-    height: auto;  
-    max-width: 140px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.menu-toggle input {
+  position: absolute;
+  top: -5px;
+  left: -3px;
+  width: 21px;
+  height: 21px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 21px;
+  height: 2px;
+  background-color: whitesmoke;
+  border-radius: 3px;
+  transition: all 0.7s;
+}
+
+/*x on hamburger menu*/
+.menu-toggle span:nth-child(2) {
+  transform-origin: left center;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: left center;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+  transform: rotate(-45deg);
+}
+
+/* invis span ke 2 / child ke 3 */
+.menu-toggle input:checked~span:nth-child(3) {
+  width: 0%;
+  opacity: 0;
+  transition: .1s
+}
+
+.image {
+
+  width: 100%;
+  height: auto;
+  max-width: 140px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    border: 2px solid blue;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 0 auto;
+  border: 2px solid blue;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 0 auto;
 
 }
+
 main {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .box {
-    margin: 5px;
-    padding: 10px;
-    border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
 }
-/* supaya ada jarak antar box  */
-.flexone{
-flex-grow: 1;
-}
-.flextwo{
-    flex-grow: 2;
-    }
-footer {
-    text-align: center;
-}
-h2 {
-  
-    text-align: center;
-    color: brown;
-    text-justify: inter-word;
-    word-wrap: break-word;
 
+/* supaya ada jarak antar box  */
+.flexone {
+  flex-grow: 1;
 }
+
+.flextwo {
+  flex-grow: 2;
+}
+
+footer {
+  text-align: center;
+}
+
+.dot {
+  color: white;
+}
+
+section {
+  margin-left: 20px;
+}
+
+h2 {
+  margin-left: 20px;
+  text-align: center;
+  color: blue;
+  text-justify: inter-word;
+  word-wrap: break-word;
+}
+
+.workplace {
+  margin-top: 20px;
+}
+
 h5 {
   text-align: center;
-  color: red;
+  color: blue;
   word-wrap: break-word;
- 
+
 }
+
 p {
-    text-align: justify;
-    text-justify: inter-word;
+  text-align: justify;
+  text-justify: inter-word;
 }
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-photo {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
 @media screen and (max-width: 768px) {
-    nav ul{
-      width: 50%;
-    }
+  nav ul {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .menu-toggle {
+    display: flex;
   }
 
-  @media screen and (max-width: 576px) {
-   .menu-toggle{
-       display: flex;
-   }
-   main{
-       flex-direction: column-reverse;
-   }
-    nav ul{
-      position: absolute;
-      right:0;
-      top: 0;
-      width: 50%;
-      flex-direction: column;
-      height: 100vh;
-      justify-content:space-evenly;
-      align-items: center;
-      background-color: coral;
-      /* transform: translateX(100%);  */
-      transition: all 0.72s;
-      opacity: 0;
-      z-index: 2;
-    }
-    nav ul.menushow{
-        opacity: 0.5;
-        /* transform: translateX(0); */
-    }
+  main {
+    flex-direction: column-reverse;
   }
 
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: coral;
+    /* transform: translateX(100%);  */
+    transition: all 0.72s;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  nav ul.menushow {
+    opacity: 0.5;
+    /* transform: translateX(0); */
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
