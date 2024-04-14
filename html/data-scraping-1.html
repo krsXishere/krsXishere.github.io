@@ -7,7 +7,7 @@
     <title>Proyek1 STr HTML 27 02 2024</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Srisakdi&display=swap" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -50,24 +50,37 @@
     </div>
 
     <script>
-        function loadJSONToTable() {
-            var tbody = document.getElementById("news-table-body");
+        // function loadJSONToTable() {
+        //     var tbody = document.getElementById("news-table-body");
 
-            fetch('../data/news_data.json')
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(item => {
-                        var row = tbody.insertRow();
-                        row.insertCell().textContent = item.no;
-                        row.insertCell().textContent = item.kategori;
-                        row.insertCell().textContent = item.judul;
-                        row.insertCell().textContent = item.tanggal_rilis_berita;
-                        row.insertCell().textContent = item.tanggal_scraping;
-                    });
-                })
-                .catch(error => console.error('Error:', error));
-        }
-        window.onload = loadJSONToTable;
+        //     fetch('../data/news_data.json')
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             data.forEach(item => {
+        //                 var row = tbody.insertRow();
+        //                 row.insertCell().textContent = item.no;
+        //                 row.insertCell().textContent = item.kategori;
+        //                 row.insertCell().textContent = item.judul;
+        //                 row.insertCell().textContent = item.tanggal_rilis_berita;
+        //                 row.insertCell().textContent = item.tanggal_scraping;
+        //             });
+        //         })
+        //         .catch(error => console.error('Error:', error));
+        // }
+        // window.onload = loadJSONToTable;
+        $(document).ready(function(){
+            $.getJSON('../data/news_data.json', function(data){
+                $.each(data, function(key, value){
+                    $('#news-table-body').append('<tr>');
+                    $('#news-table-body').append('<td>'+value.no+'</td>');
+                    $('#news-table-body').append('<td>'+value.kategori+'</td>');
+                    $('#news-table-body').append('<td>'+value.judul+'</td>');
+                    $('#news-table-body').append('<td>'+value.tanggal_rilis_berita+'</td>');
+                    $('#news-table-body').append('<td>'+value.tanggal_scraping+'</td>');
+                    $('#news-table-body').append('</tr>');
+                });
+            });
+        });
     </script>
 </body>
 <footer class="box">
