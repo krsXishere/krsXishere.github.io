@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek1 STr HTML 27 02 2024</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Srisakdi&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html"
+                    style="font-family: 'Helvetica', cursive; text-decoration: none; color: white;">Krisna Purnama</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="subjects.html">Subjects</a></li>
+                <li><a href="files.html">Files</a></li>
+                <li><a href="maps.html">Maps</a></li>
+                <li><a href="data-scraping-1.html">Data Scraping 1</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <input type="checkbox" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <h2>Data Berita</h2>
+    <div id="news-table-container">
+        <table id="news-table" border="1">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Kategori</th>
+                    <th>Judul</th>
+                    <th>Tanggal Rilis Berita</th>
+                    <th>Tanggal Scraping</th>
+                </tr>
+            </thead>
+            <tbody id="news-table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function loadJSONToTable() {
+            var tbody = document.getElementById("news-table-body");
+
+            fetch('../data/news_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(item => {
+                        var row = tbody.insertRow();
+                        row.insertCell().textContent = item.no;
+                        row.insertCell().textContent = item.kategori;
+                        row.insertCell().textContent = item.judul;
+                        row.insertCell().textContent = item.tanggal_rilis_berita;
+                        row.insertCell().textContent = item.tanggal_scraping;
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        window.onload = loadJSONToTable;
+    </script>
+</body>
+<footer class="box">
+    Krisna, Di depan Laptop 27 Februari 2024
+</footer>
+
+</html>

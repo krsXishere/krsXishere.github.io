@@ -12,13 +12,23 @@ p {
   margin-left: 20px;
 }
 
-/*navbar*/
+#news-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+  overflow-x: auto; 
+}
+
+#news-table {
+  max-width: 100%;
+  width: 100%;
+}
+
 nav {
   display: flex;
   background-color: blue;
   justify-content: space-around;
-  /* padding: 20px 0; atas bawah 20  kiri kanan 0 */
-  /* atur padding dengan flex */
   height: 45px;
   align-items: center;
   color: whitesmoke;
@@ -42,7 +52,6 @@ nav ul {
 nav .logo {
   font-family: "Helvetica", cursive;
   letter-spacing: 3px;
-  /*space antar char*/
 }
 
 nav ul li a {
@@ -55,7 +64,6 @@ nav ul li a:hover {
   color: teal;
 }
 
-/* hamburger menu */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -84,7 +92,6 @@ nav ul li a:hover {
   transition: all 0.7s;
 }
 
-/*x on hamburger menu*/
 .menu-toggle span:nth-child(2) {
   transform-origin: left center;
 }
@@ -101,7 +108,6 @@ nav ul li a:hover {
   transform: rotate(-45deg);
 }
 
-/* invis span ke 2 / child ke 3 */
 .menu-toggle input:checked~span:nth-child(3) {
   width: 0%;
   opacity: 0;
@@ -140,7 +146,6 @@ main {
   border-radius: 5px;
 }
 
-/* supaya ada jarak antar box  */
 .flexone {
   flex-grow: 1;
 }
@@ -231,7 +236,6 @@ p {
     justify-content: space-evenly;
     align-items: center;
     background-color: coral;
-    /* transform: translateX(100%);  */
     transition: all 0.72s;
     opacity: 0;
     z-index: 2;
@@ -239,7 +243,6 @@ p {
 
   nav ul.menushow {
     opacity: 0.5;
-    /* transform: translateX(0); */
   }
 }
 
